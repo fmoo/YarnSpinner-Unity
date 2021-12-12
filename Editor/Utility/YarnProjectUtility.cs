@@ -61,7 +61,7 @@ namespace Yarn.Unity.Editor
         /// asset.</param>
         /// <param name="sourcePath">The path to the source .yarn asset
         /// that should be added to the Yarn Project.</param>
-        internal static void AssignScriptToProject(string sourcePath, string projectPath) {
+        public static void AssignScriptToProject(string sourcePath, string projectPath) {
             var newSourceScript = AssetDatabase.LoadAssetAtPath<TextAsset>(sourcePath);
             var programImporter = AssetImporter.GetAtPath(projectPath) as YarnProjectImporter;
             var scriptImporter = AssetImporter.GetAtPath(sourcePath) as YarnImporter;
