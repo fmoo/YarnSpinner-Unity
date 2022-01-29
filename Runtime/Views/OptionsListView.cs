@@ -8,7 +8,7 @@ namespace Yarn.Unity
 {
     public class OptionsListView : DialogueViewBase
     {
-        [SerializeField] CanvasGroup canvasGroup;
+        [SerializeField] protected CanvasGroup canvasGroup;
 
         [SerializeField] OptionView optionViewPrefab;
 
@@ -19,7 +19,7 @@ namespace Yarn.Unity
         [SerializeField] bool showUnavailableOptions = false;
 
         // A cached pool of OptionView objects so that we can reuse them
-        List<OptionView> optionViews = new List<OptionView>();
+        protected List<OptionView> optionViews = new List<OptionView>();
 
         // The method we should call when an option has been selected.
         Action<int> OnOptionSelected;
