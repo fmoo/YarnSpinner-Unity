@@ -129,7 +129,7 @@ namespace Yarn.Unity
 
             if (!voiceOverClip)
             {
-                Debug.LogWarning($"Playing voice over failed since the {nameof(AudioClip)} of the voice over audio language or the base language was null.", gameObject);
+                // Debug.LogWarning($"Playing voice over failed since the {nameof(AudioClip)} of the voice over audio language or the base language was null.", gameObject);
                 completionHandler?.Invoke();
                 yield break;
             }
