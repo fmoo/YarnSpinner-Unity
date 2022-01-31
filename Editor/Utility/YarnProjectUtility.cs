@@ -16,7 +16,7 @@ namespace Yarn.Unity.Editor
     /// Contains methods for performing high-level operations on Yarn
     /// projects, and their associated localization files.
     /// </summary>
-    internal static class YarnProjectUtility
+    public static class YarnProjectUtility
     {
 
         /// <summary>
