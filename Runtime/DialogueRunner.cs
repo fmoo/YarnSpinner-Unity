@@ -717,18 +717,20 @@ namespace Yarn.Unity
                 }
             }
 
-            if (dialogueViews.Length == 0)
+            if (dialogueViews == null || dialogueViews.Length == 0)
             {
                 Debug.LogWarning($"Dialogue Runner doesn't have any dialogue views set up. No lines or options will be visible.");
             }
-
-            foreach (var view in dialogueViews)
+            else
             {
-                if (view == null)
+                foreach (var view in dialogueViews)
                 {
-                    continue;
+                    if (view == null)
+                    {
+                        continue;
+                    }
+                    view.requestInterrupt = OnViewRequestedInterrupt;
                 }
-                view.requestInterrupt = OnViewRequestedInterrupt;
             }
 
             if (yarnProject != null)
