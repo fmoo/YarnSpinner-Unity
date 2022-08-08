@@ -56,13 +56,20 @@ namespace Yarn.Unity
             return baseLocalization;
         }
 
+        Program cachedProgram = null;
+
         /// <summary>
         /// Deserializes a compiled Yarn program from the stored bytes in
         /// this object.
         /// </summary>
         public Program GetProgram()
         {
-            return Program.Parser.ParseFrom(compiledYarnProgram);
+            // TODO: Check if compiledYarnProgram has been updated, and re-set cachedProgram if it has.
+            if (cachedProgram == null)
+            {
+                cachedProgram = Program.Parser.ParseFrom(compiledYarnProgram);
+            }
+            return cachedProgram;
         }
     }
 }
