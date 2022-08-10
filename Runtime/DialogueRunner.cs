@@ -1127,11 +1127,19 @@ namespace Yarn.Unity
             // Invoke the delegate.
             var yieldInstruction = @theDelegate.DynamicInvoke(finalParametersToUse);
 
-            // Yield on the return result.
-            yield return yieldInstruction;
-
-            // Call the completion handler.
-            onSuccessfulDispatch();
+            // If the delegate returns null, this is a background command, or was handled completely;
+            // call onSuccessfulDispatch immediately to avoid unnecessary frame delays.
+            if (yieldInstruction != null)
+            {
+                // Yield on the return result.
+                yield return yieldInstruction;
+                // Call the completion handler.
+                onSuccessfulDispatch();
+            }
+            else
+            {
+                onSuccessfulDispatch();
+            }
         }
 
         /// <summary>
