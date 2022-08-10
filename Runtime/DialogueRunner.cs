@@ -658,7 +658,7 @@ namespace Yarn.Unity
                 {
                     continue;
                 }
-                view.requestInterrupt = OnViewRequestedInterrupt;
+                view.requestInterrupt += OnViewRequestedInterrupt;
             }
             dialogueViews = views;
         }
@@ -729,7 +729,7 @@ namespace Yarn.Unity
                     {
                         continue;
                     }
-                    view.requestInterrupt = OnViewRequestedInterrupt;
+                    view.requestInterrupt += OnViewRequestedInterrupt;
                 }
             }
 
@@ -1255,7 +1255,7 @@ namespace Yarn.Unity
         {
             if (CurrentLine == null)
             {
-                Debug.LogWarning("Dialogue runner was asked to advance but there is no current line");
+                // Debug.LogWarning("Dialogue runner was asked to advance but there is no current line");
                 return;
             }
 
