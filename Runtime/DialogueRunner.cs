@@ -404,8 +404,10 @@ namespace Yarn.Unity
         /// </summary>
         public void Stop()
         {
+            if (!IsDialogueRunning) return;
             IsDialogueRunning = false;
             Dialogue.Stop();
+            onDialogueComplete?.Invoke();
         }
 
         /// <summary>
@@ -1250,6 +1252,7 @@ namespace Yarn.Unity
         void ContinueDialogue()
         {
             CurrentLine = null;
+            if (!IsDialogueRunning) return;
             Dialogue.Continue();
         }
 
