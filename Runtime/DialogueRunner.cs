@@ -1253,7 +1253,31 @@ namespace Yarn.Unity
         {
             CurrentLine = null;
             if (!IsDialogueRunning) return;
-            Dialogue.Continue();
+            if (suspendCondition != null) {
+                StartCoroutine(WaitForSuspendConditionDone());
+            } else {
+                Dialogue.Continue();
+            }
+        }
+
+        IEnumerator WaitForSuspendConditionDone() {
+            yield return new WaitWhile(suspendCondition);
+            suspendCondition = null;
+            ContinueDialogue();
+        }
+
+        System.Func<bool> suspendCondition = null;
+        public void SuspendWhile(System.Func<bool> condition)
+        {
+            if (suspendCondition != null)
+            {
+                return;
+            }
+            suspendCondition = condition;
+        }
+        public void SuspendUntil(System.Func<bool> condition)
+        {
+            SuspendWhile(() => !condition());
         }
 
         /// <summary>
