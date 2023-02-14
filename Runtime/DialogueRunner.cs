@@ -404,6 +404,7 @@ namespace Yarn.Unity
         /// </summary>
         public void Stop()
         {
+            suspendCondition = null;
             if (!IsDialogueRunning) return;
             IsDialogueRunning = false;
             Dialogue.Stop();
