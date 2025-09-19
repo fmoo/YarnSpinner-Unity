@@ -21,35 +21,5 @@
   "hideInEditor": false,
   "type": "tool",
   "samples": [
-    {
-      "displayName": "Intro",
-      "description": "If you're new to Yarn Spinner, start with this demo. A simple conversation with branching, variables, and voice-over.",
-      "path": "Samples~/Intro"
-    },
-    {
-      "displayName": "Space",
-      "description": "A side-scrolling conversation that demonstrates localisation and voiceovers.",
-      "path": "Samples~/Space"
-    },
-    {
-      "displayName": "Visual Novel",
-      "description": "A template for creating a visual novel with extensive use of Yarn Commands.",
-      "path": "Samples~/VisualNovel"
-    },
-    {
-      "displayName": "3D Speech Bubble",
-      "description": "Code for positioning speech bubbles dynamically above characters in a 3D (or 2D) game world.",
-      "path": "Samples~/3D"
-    },
-    {
-      "displayName": "Phone Chat",
-      "description": "A text message style phone conversation template.",
-      "path": "Samples~/PhoneChat"
-    },
-    {
-      "displayName": "Addressables",
-      "description": "How to use Addressables package to load in audio as a separate external assets via 'address'... requires the Addressables package.",
-      "path": "Samples~/Addressables"
-    }
   ]
 }
