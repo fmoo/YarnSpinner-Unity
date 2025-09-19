@@ -71,5 +71,10 @@ namespace Yarn.Unity
             }
             return cachedProgram;
         }
+
+        public void SetProgram(Program program)
+        {
+            cachedProgram = program;
+        }
     }
 }
